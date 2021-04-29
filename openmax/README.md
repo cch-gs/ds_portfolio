@@ -1,3 +1,6 @@
+# Openmax
+OpenMax estimates the probability of an input being from an unknown class.
+
 # Arguments
 ## Openmax
   |        name       |type |       available values        |                     help                      |
