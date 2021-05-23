@@ -8,7 +8,7 @@ pip install matplotlib
 
 # anatomy of figure
 그림의 각 명칭도
-<img src="/fig/sphx_glr_anatomy_001.png">
+![anatomy](fig/sphx_glr_anatomy_001.png)
 
 # draw plot
 plot 그리기
