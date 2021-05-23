@@ -1,2 +1,0 @@
-# docker
-making docker image
