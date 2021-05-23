@@ -8,11 +8,11 @@ pip install matplotlib
 
 # anatomy of figure
 그림의 각 명칭도  
-![anatomy](fig/sphx_glr_anatomy_001.png width="700" height="370")
+![anatomy](fig/sphx_glr_anatomy_001.png)
 
 # draw plot
 plot 그리기  
-![plot](graph/plot.png width="700" height="370")
+![plot](graph/plot.png)
 ```
 import matplotlib.pyplot as plt
 
@@ -31,7 +31,7 @@ plt.ylabel('Y-Label')
 x축과 y축의 이름을 지정하기
 
 ## color&style
-![color&style](graph/color&style.png width="700" height="370")
+![color&style](graph/color&style.png)
 선의 색깔 및 스타일 변경  
 ```
 plt.plot([1,2,3,4], [2,4,6,8], 'r--')
@@ -39,12 +39,12 @@ plt.plot([1,2,3,4], [1,2,3,4], 'm-.')
 ```
 plot함수 내에 색깔 및 스타일에 대한 값을 입력하면 변경 가능  
 자세한 사항은 아래 그림 참조  
-![line_color](graph/line_color.png width="700" height="370")
-![line_style](graph/line_style.png width="700" height="370")
+![line_color](graph/line_color.png)
+![line_style](graph/line_style.png)
 
 ## grid
 격자 그리기  
-![grid](graph/grid.png width="700" height="370")
+![grid](graph/grid.png)
 ```
 plt.plot([1,2,3,4], [2,4,6,8])
 plt.plot([1,2,3,4], [1,2,3,4])
@@ -53,7 +53,7 @@ plt.grid(True)
 
 ## hlines&vlines
 그래프 내에 수직 및 수평선 추가  
-![lines](graph/lines.png width="700" height="370")
+![lines](graph/lines.png)
 ```
 plt.plot([1,2,3,4], [2,4,6,8])
 plt.plot([1,2,3,4], [1,2,3,4])
@@ -63,7 +63,7 @@ plt.axvline(x=2, color='b', linestyle='-.',  linewidth=1)
 
 # draw bar graph
 막대 그래프 그리기
-![bar](graph/bar.png width="700" height="370")
+![bar](graph/bar.png)
 ```
 x = [0,1,2]
 years = ['2020', '2021', '2022']
@@ -75,7 +75,7 @@ plt.xticks(x, years)
 
 # draw barh graph
 수평 막대 그래프 그리기
-![barh](graph/barh.png width="700" height="370")
+![barh](graph/barh.png)
 ```
 x = [0,1,2]
 years = ['2020', '2021', '2022']
@@ -86,7 +86,7 @@ plt.barh(x, prices, tick_label=years)
 
 # draw scatter plot
 산점도 그리기  
-![scatter](graph/scatter.png width="700" height="370")
+![scatter](graph/scatter.png)
 ```
 import numpy as np
 N = 50
@@ -102,7 +102,7 @@ alpha는 산점도의 투명도를 나타냄
 
 # draw historgram
 히스토그램 그리기  
-![histogram](graph/histogram.png width="700" height="370")
+![histogram](graph/histogram.png)
 ```
 height = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 175, 175, 178, 156, 146, 185, 175, 177]
 plt.hist(height)
@@ -110,7 +110,7 @@ plt.hist(height)
 
 # draw pie chart
 원그래프 그리기  
-![pie](graph/pie.png width="700" height="370")
+![pie](graph/pie.png)
 ```
 ratio = [27, 33, 15, 25]
 labels = ['Bear', 'Soju', 'Wine', 'Makuly']
