@@ -32,7 +32,7 @@ plt.ylabel('Y-Label')
 x축과 y축의 이름을 지정하기
 
 ## color&style
-![color&style](graph/color&style.png)
+![color&style](graph/color&style.png)  
 선의 색깔 및 스타일 변경  
 ```
 plt.plot([1,2,3,4], [2,4,6,8], 'r--')
@@ -89,7 +89,7 @@ plt.yaxis(rotation = 45, fontsize = '14')
 
 # draw bar graph
 https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html  
-막대 그래프 그리기
+막대 그래프 그리기  
 ![bar](graph/bar.png)
 ```
 x = [0,1,2]
@@ -102,7 +102,7 @@ plt.xticks(x, years)
 
 # draw barh graph
 https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.barh.html  
-수평 막대 그래프 그리기
+수평 막대 그래프 그리기  
 ![barh](graph/barh.png)
 ```
 x = [0,1,2]
