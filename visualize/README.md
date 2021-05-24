@@ -40,8 +40,8 @@ plt.plot([1,2,3,4], [1,2,3,4], 'm-.')
 ```
 plot함수 내에 색깔 및 스타일에 대한 값을 입력하면 변경 가능  
 자세한 사항은 아래 그림 참조  
-![line_color](graph/line_color.png)
-![line_style](graph/line_style.png)
+![line_color](graph/line_color.png)  
+![line_style](graph/line_style.png)  
 
 ## grid
 격자 그리기  
@@ -77,7 +77,12 @@ plt.savefig('root', dpi=300) # dpi는 사진의 해상도
 
 범례 표시하기
 ```
-plt.legend()
+plt.legend(['A', 'B'])
+```
+
+그래프 타이틀 지정하기
+```
+plt.title('graph title', fontsize=22)
 ```
 
 x축, y축 폰트 회전 및 크기 설정
@@ -151,7 +156,7 @@ labels = ['Beer', 'Soju', 'Wine', 'Makuly']
 plt.pie(ratio, labels=labels, autopct='%.2f%%') # autopc는 숫자 표현 형식으로 소숫점 아래 두 자리 까지 표현함
 ```
 ## function
-색상 정하기  
+색 바꾸기  
 ![pie](graph/pie_color.png)
 ```
 colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
@@ -166,7 +171,7 @@ colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
  
 fig1, ax1 = plt.subplots()
 ax1.pie(sizes, colors = colors, labels=labels, autopct='%1.1f%%')
-centre_circle = plt.Circle((0,0),0.70,fc='white') # make circle
+centre_circle = plt.Circle((0,0),0.70,fc='white') # 중앙 원 그리기
 fig = plt.gcf()
 fig.gca().add_artist(centre_circle)
 ax1.axis('equal')  
