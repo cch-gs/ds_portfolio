@@ -1,5 +1,5 @@
 # Data Visualization
-파이썬에서 주로 활용되는 시각화 라이브러리 matplotlib를 이용하여 데이터 시각화를 하고 그 방법에 대해 알아봄
+파이썬에서 주로 활용되는 시각화 라이브러리 matplotlib를 이용하여 데이터 시각화를 하고 유용한 함수들에 대해 소개함
 
 # Install
 ```
@@ -11,6 +11,7 @@ pip install matplotlib
 ![anatomy](fig/sphx_glr_anatomy_001.png)
 
 # draw plot
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html  
 plot 그리기  
 ![plot](graph/plot.png)
 ```
@@ -61,7 +62,33 @@ plt.axhline(y=3, color='r', linestyle='--',  linewidth=1)
 plt.axvline(x=2, color='b', linestyle='-.',  linewidth=1)
 ```
 
+## function
+그 외 유용한 함수 소개  
+
+그래프 크기 조절
+```
+plt.figure(figsize=(n,m))
+```
+
+그래프 저장하기
+```
+plt.savefig('root', dpi=300) # dpi는 사진의 해상도
+```
+
+범례 표시하기
+```
+plt.legend()
+```
+
+x축, y축 폰트 회전 및 크기 설정
+```
+plt.xaxis(rotation = 30, fontsize = '12')
+plt.yaxis(rotation = 45, fontsize = '14')
+```
+
+
 # draw bar graph
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html  
 막대 그래프 그리기
 ![bar](graph/bar.png)
 ```
@@ -74,6 +101,7 @@ plt.xticks(x, years)
 ```
 
 # draw barh graph
+https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.barh.html  
 수평 막대 그래프 그리기
 ![barh](graph/barh.png)
 ```
@@ -85,35 +113,62 @@ plt.barh(x, prices, tick_label=years)
 ```
 
 # draw scatter plot
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html  
 산점도 그리기  
 ![scatter](graph/scatter.png)
 ```
 import numpy as np
-N = 50
+N = 30
 x = np.random.rand(N)
 y = np.random.rand(N)
 colors = np.random.rand(N)
 size = (100 * np.random.rand(N))
-plt.scatter(x, y, s=size, c=colors, alpha=0.5)
+plt.scatter(x, y, s=size, c=colors, alpha=0.5) # s는 각 산점도의 크기, c는 각 산점도의 색깔, alpha는 산점도의 투명도를 나타냄
 ```
-s는 각 산점도의 크기
-c는 각 산점도의 색깔
-alpha는 산점도의 투명도를 나타냄
 
 # draw historgram
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html  
 히스토그램 그리기  
 ![histogram](graph/histogram.png)
 ```
 height = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 175, 175, 178, 156, 146, 185, 175, 177]
-plt.hist(height)
+plt.hist(height, alpha=0.5) # alpha는 투명도를 나타냄
+```
+## function
+히스토그램의 스타일  
+```
+plt.hist(height, histtype='step')
+plt.hist(height, histtype='stepfilled')
 ```
 
 # draw pie chart
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html  
 원그래프 그리기  
 ![pie](graph/pie.png)
 ```
 ratio = [27, 33, 15, 25]
-labels = ['Bear', 'Soju', 'Wine', 'Makuly']
-plt.pie(ratio, labels=labels, autopct='%.2f%%')
+labels = ['Beer', 'Soju', 'Wine', 'Makuly']
+plt.pie(ratio, labels=labels, autopct='%.2f%%') # autopc는 숫자 표현 형식으로 소숫점 아래 두 자리 까지 표현함
 ```
-autopc는 숫자 표현 형식으로 소숫점 아래 두 자리 까지 표현함
+## function
+색상 정하기  
+![pie](graph/pie_color.png)
+```
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+plt.pie(ratio, labels=labels, autopct='%.2f%%', colors=colors)
+```
+도넛 형태로 그리기  
+![pie](graph/pie_doughnut.png)
+```
+labels = ['Beer', 'Soju', 'Wine', 'Makuly']
+sizes = [27, 33, 15, 25]
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+ 
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, colors = colors, labels=labels, autopct='%1.1f%%')
+centre_circle = plt.Circle((0,0),0.70,fc='white') # make circle
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+ax1.axis('equal')  
+plt.tight_layout()
+```

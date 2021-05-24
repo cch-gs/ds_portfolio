@@ -82,8 +82,31 @@ plt.close()
 
 # pie
 ratio = [27, 33, 15, 25]
-labels = ['Bear', 'Soju', 'Wine', 'Makuly']
+labels = ['Beer', 'Soju', 'Wine', 'Makuly']
 plt.pie(ratio, labels=labels, autopct='%.2f%%')
 plt.show()
 plt.savefig('./graph/pie.png', dpi=300)
 plt.close()
+
+# pie color
+ratio = [27, 33, 15, 25]
+labels = ['Beer', 'Soju', 'Wine', 'Makuly']
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+plt.pie(ratio, labels=labels, autopct='%.2f%%', colors=colors)
+plt.show()
+plt.savefig('./graph/pie_color.png', dpi=300)
+plt.close()
+
+# pie doughnut
+labels = ['Beer', 'Soju', 'Wine', 'Makuly']
+sizes = [27, 33, 15, 25]
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+ 
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, colors = colors, labels=labels, autopct='%1.1f%%')
+centre_circle = plt.Circle((0,0),0.70,fc='white')
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+ax1.axis('equal')  
+plt.tight_layout()
+plt.show()
