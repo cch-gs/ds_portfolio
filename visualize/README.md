@@ -6,6 +6,11 @@
 pip install matplotlib
 ```
 
+# Import
+```
+import matplotlib.pyplot as plt
+```
+
 # anatomy of figure
 그림의 각 명칭도  
 ![anatomy](fig/sphx_glr_anatomy_001.png)
