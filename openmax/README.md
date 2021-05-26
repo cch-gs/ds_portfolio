@@ -1,6 +1,7 @@
 # Openmax
 OpenMax estimates the probability of an input being from an unknown class.
-
+![openmax](fig/openmax.png)  
+A plot of OpenMax probabilities vs SoftMax prob- abilities for the fooling (triangle), open set (square) and valida- tion (circle) for 100 categories from ImageNet 2012. The number of triangles and squares below the diagonal means that uncertainty thresholding on OpenMax threshold (vertical direction), is better than thresholding on SoftMax (horizontal direction).  
 # Arguments
 ## Openmax
   |        name       |type |       available values        |                     help                      |

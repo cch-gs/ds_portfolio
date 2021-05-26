@@ -5,7 +5,7 @@ plt.plot([1,2,3,4], [2,4,6,8])
 plt.plot([1,2,3,4], [1,2,3,4])
 plt.xlabel('X-Label')
 plt.ylabel('Y-Label')
-plt.savefig('./graph/plot.png', dpi=300)
+plt.savefig('./graph/plot.png')
 plt.show()
 plt.close()
 
@@ -14,7 +14,7 @@ plt.plot([1,2,3,4], [2,4,6,8], 'r--')
 plt.plot([1,2,3,4], [1,2,3,4], 'm-.')
 plt.xlabel('X-Label')
 plt.ylabel('Y-Label')
-plt.savefig('./graph/color&style.png', dpi=300)
+plt.savefig('./graph/color&style.png')
 plt.show()
 plt.close()
 
@@ -23,7 +23,7 @@ plt.plot([1,2,3,4], [2,4,6,8])
 plt.plot([1,2,3,4], [1,2,3,4])
 plt.grid(True)
 
-plt.savefig('./graph/grid.png', dpi=300)
+plt.savefig('./graph/grid.png')
 plt.show()
 plt.close()
 
@@ -33,8 +33,18 @@ plt.plot([1,2,3,4], [1,2,3,4])
 plt.axhline(y=3, color='r', linestyle='--',  linewidth=1)
 plt.axvline(x=2, color='b', linestyle='-.',  linewidth=1)
 
-plt.savefig('./graph/lines.png', dpi=300)
+plt.savefig('./graph/lines.png')
 plt.show()
+plt.close()
+
+# table
+import numpy as np
+x = np.random.rand(5, 8)*.7 
+plt.plot(x.mean(axis=0), '-o', label='average per column')
+plt.xticks([])
+plt.table(cellText=[['%1.2f' % xxx for xxx in xx] for xx in x],cellColours=plt.cm.GnBu(x),loc='bottom') 
+plt.show()
+plt.savefig('./graph/table.png')
 plt.close()
 
 # bar graph
@@ -44,7 +54,7 @@ prices = [500, 450, 700]
 
 plt.bar(x, prices)
 plt.xticks(x, years)
-plt.savefig('./graph/bar.png', dpi=300)
+plt.savefig('./graph/bar.png')
 plt.show()
 plt.close()
 
@@ -54,12 +64,11 @@ years = ['2020', '2021', '2022']
 prices = [500, 450, 700]
 
 plt.barh(x, prices, tick_label=years)
-plt.savefig('./graph/barh.png', dpi=300)
+plt.savefig('./graph/barh.png')
 plt.show()
 plt.close()
 
 # scatter
-import numpy as np
 N = 50
 x = np.random.rand(N)
 y = np.random.rand(N)
@@ -67,7 +76,7 @@ colors = np.random.rand(N)
 size = (100 * np.random.rand(N))
 plt.scatter(x, y, s=size, c=colors, alpha=0.5)
 plt.show()
-plt.savefig('./graph/scatter.png', dpi=300)
+plt.savefig('./graph/scatter.png')
 plt.close()
 
 # histogram
@@ -76,7 +85,7 @@ height = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 
 plt.hist(height)
 # plt.hist(weight, bins=100, density=True, alpha=0.7, histtype='step')
 # plt.hist(height, bins=50, density=True, alpha=0.5, histtype='stepfilled')
-plt.savefig('./graph/histogram.png', dpi=300)
+plt.savefig('./graph/histogram.png')
 plt.show()
 plt.close()
 
@@ -85,7 +94,7 @@ ratio = [27, 33, 15, 25]
 labels = ['Beer', 'Soju', 'Wine', 'Makuly']
 plt.pie(ratio, labels=labels, autopct='%.2f%%')
 plt.show()
-plt.savefig('./graph/pie.png', dpi=300)
+plt.savefig('./graph/pie.png')
 plt.close()
 
 # pie color
@@ -94,7 +103,7 @@ labels = ['Beer', 'Soju', 'Wine', 'Makuly']
 colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
 plt.pie(ratio, labels=labels, autopct='%.2f%%', colors=colors)
 plt.show()
-plt.savefig('./graph/pie_color.png', dpi=300)
+plt.savefig('./graph/pie_color.png')
 plt.close()
 
 # pie doughnut
@@ -110,3 +119,4 @@ fig.gca().add_artist(centre_circle)
 ax1.axis('equal')  
 plt.tight_layout()
 plt.show()
+plt.savefig('./graph/pie_doughnut.png')

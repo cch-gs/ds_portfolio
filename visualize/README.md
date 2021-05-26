@@ -62,6 +62,17 @@ plt.axhline(y=3, color='r', linestyle='--',  linewidth=1)
 plt.axvline(x=2, color='b', linestyle='-.',  linewidth=1)
 ```
 
+## tables
+그래프 내에 수직 및 수평선 추가  
+![table](graph/table.png)
+```
+import numpy as np
+x = np.random.rand(5, 8)*.7 
+plt.plot(x.mean(axis=0), '-o', label='average per column')
+plt.xticks([])
+plt.table(cellText=[['%1.2f' % xxx for xxx in xx] for xx in x],cellColours=plt.cm.GnBu(x),loc='bottom') # loc는 table위치
+```
+
 ## function
 그 외 유용한 함수 소개  
 
