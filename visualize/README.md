@@ -62,8 +62,9 @@ plt.axhline(y=3, color='r', linestyle='--',  linewidth=1)
 plt.axvline(x=2, color='b', linestyle='-.',  linewidth=1)
 ```
 
-## tables
-그래프 내에 수직 및 수평선 추가  
+## table
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.table.html  
+테이블 추가  
 ![table](graph/table.png)
 ```
 import numpy as np
@@ -87,7 +88,10 @@ plt.savefig('root', dpi=300) # dpi는 사진의 해상도
 ```
 
 범례 표시하기
+![legend](graph/legend.png)
 ```
+plt.plot([1,2,3,4], [2,4,6,8])
+plt.plot([1,2,3,4], [1,2,3,4])
 plt.legend(['A', 'B'])
 ```
 
@@ -150,6 +154,16 @@ https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html
 height = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 175, 175, 178, 156, 146, 185, 175, 177]
 plt.hist(height, alpha=0.5) # alpha는 투명도를 나타냄
 ```
+
+## histograms
+![histograms](graph/histograms.png)
+height1 = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 175, 175, 178, 156, 146, 185, 175, 177]
+height2 = [175, 145, 164, 136, 183, 163, 165, 178, 165, 156, 195, 184, 186, 182, 175, 184, 193, 164, 159, 173, 181, 184]
+# weight = [68, 81, 64, 56, 78, 74, 61, 77, 66, 68, 59, 71, 80, 59, 67, 81, 69, 73, 69, 74, 70, 65]
+
+plt.hist(height1, bins=7, alpha=0.3)
+plt.hist(height2, bins=7, alpha=0.3)
+
 ## function
 히스토그램의 스타일  
 ```
