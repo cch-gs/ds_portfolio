@@ -152,7 +152,7 @@ https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html
 ![histogram](graph/histogram.png)
 ```
 height = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 175, 175, 178, 156, 146, 185, 175, 177]
-plt.hist(height, alpha=0.5) # alpha는 투명도를 나타냄
+plt.hist(height) 
 ```
 
 ## histograms
@@ -160,9 +160,8 @@ plt.hist(height, alpha=0.5) # alpha는 투명도를 나타냄
 ```
 height1 = [170, 165, 174, 176, 173, 167, 185, 184, 183, 174, 191, 164, 153, 153, 175, 175, 178, 156, 146, 185, 175, 177]
 height2 = [175, 145, 164, 136, 183, 163, 165, 178, 165, 156, 195, 184, 186, 182, 175, 184, 193, 164, 159, 173, 181, 184]
-# weight = [68, 81, 64, 56, 78, 74, 61, 77, 66, 68, 59, 71, 80, 59, 67, 81, 69, 73, 69, 74, 70, 65]
 
-plt.hist(height1, bins=7, alpha=0.3)
+plt.hist(height1, bins=7, alpha=0.3) # bin은 구간 크기, alpha는 투명도를 나타냄
 plt.hist(height2, bins=7, alpha=0.3)
 ```
 ## function
