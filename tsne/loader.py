@@ -3,7 +3,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import SubsetRandomSampler, Sampler
 import numpy as np
-
+import pandas as pd
 def in_dist_DataSet(config):
 
     if config.data == 'gen_mnist1' or config.data == 'gen_mnist2':

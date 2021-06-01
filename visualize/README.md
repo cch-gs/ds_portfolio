@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 ```
 
 # anatomy of figure
-그림의 각 명칭도  
+그래프의 각 명칭도  
 ![anatomy](fig/sphx_glr_anatomy_001.png)
 
 # draw plot
@@ -20,8 +20,6 @@ https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
 plot 그리기  
 ![plot](graph/plot.png)
 ```
-import matplotlib.pyplot as plt
-
 plt.plot([1,2,3,4], [2,4,6,8])
 plt.plot([1,2,3,4], [1,2,3,4])
 plt.show()
